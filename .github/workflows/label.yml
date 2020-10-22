@@ -1,0 +1,13 @@
+name: Test Label
+on:
+  - issues
+  - push
+  - pull_request
+jobs:
+  sync-labels:
+    runs-on: ubuntu-latest
+    name: Sync repository labels
+    steps:
+      - uses: baker371/origami-labels@v1
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
